@@ -17,6 +17,6 @@ plural
 8. What dependency are we requiring? 
 express
 9. What is the development URL to your database?
-mongodb+srv://dbUser:JRw:7ax<En[7RE3L@cluster0-ozywb.azure.mongodb.net/local_library?retryWrites=true&w=majority
+mongodb+srv://dbUser:password1234@cluster0-ozywb.azure.mongodb.net/local_library?retryWrites=true&w=majority
 10. at local 3000
 i still see express

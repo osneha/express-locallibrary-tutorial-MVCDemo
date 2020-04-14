@@ -6,13 +6,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog'); 
-
+const dotenv = require('dotenv')
 
 //setting up database
 const app = express();
+dotenv.config({ path: '.env' })
 const mongoose = require('mongoose');
 
-const dev_db_url = 'mongodb+srv://dbUser:password1234@cluster0-ozywb.azure.mongodb.net/local_library?retryWrites=true&w=majority'
+const dev_db_url = process.env.ATLAS_URI
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;

@@ -9,5 +9,9 @@ const BookInstanceSchema = new Schema({
     status: {type: String, required: true, enum:['Available', 'Maintenance', 'Loaned', 'Reserved'], default:'Available'},
     due_back: { type: Date, default: Date.now },
 });
-
+BookInstanceSchema
+.virtual('due_back_formatted')
+.get(function () {
+  return moment(this.due_back).format('MMMM Do, YYYY');
+});
 module.exports = mongoose.model('BookInstance', BookInstanceSchema);
